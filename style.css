@@ -35,7 +35,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 section { padding: 80px 10%; }
 .mt-30 { margin-top: 30px; }
 
-/* ---------------- Navbar ---------------- */
+/* ---------------- Navbar & Hamburger ---------------- */
 .navbar {
     position: fixed;
     top: 0; width: 100%;
@@ -53,6 +53,15 @@ section { padding: 80px 10%; }
 .nav-links { list-style: none; display: flex; gap: 30px; }
 .nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--neon-cyan); }
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.hamburger:hover { color: var(--neon-cyan); }
 
 /* ---------------- Hero Section ---------------- */
 .hero { display: flex; justify-content: space-between; align-items: center; min-height: 100vh; padding-top: 120px; }
@@ -77,7 +86,7 @@ h1 { font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px;
 }
 .bio { color: var(--text-muted); margin-bottom: 35px; font-size: 1.05rem; }
 
-/* ---------------- Hero Buttons & Original Brand Colors ---------------- */
+/* ---------------- Hero Buttons & Social Icons ---------------- */
 .hero-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
 .btn-primary { 
     background: linear-gradient(135deg, var(--neon-mint), var(--neon-cyan)); 
@@ -92,26 +101,21 @@ h1 { font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px;
     font-size: 1.2rem; text-decoration: none; transition: 0.3s;
     border: 1px solid var(--border-color);
 }
-/* LinkedIn (Blue) */
 .linkedin-btn { background: #0A66C2; color: #fff; border: none; }
-/* GitHub (White bg, Black cat) */
 .github-btn { background: #fff; color: #000; border: none; }
-/* Gmail (Multi-color gradient) */
 .gmail-btn { background: #fff; border: none; }
 .gmail-btn i {
     background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-/* Call (Green bg, White icon) */
 .call-btn { background: #25D366; color: #fff; border: none; }
-
 .social-btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.1); box-shadow: 0 8px 15px rgba(0,0,0,0.3); }
 
 /* ---------------- Avatar Fix (Bigger & Cropped properly) ---------------- */
 .hero-avatar { position: relative; width: 340px; height: 340px; display: flex; justify-content: center; align-items: center; }
 .hero-avatar img { 
     width: 280px; height: 280px; border-radius: 50%; 
-    object-fit: cover; object-position: center 40%; /* Increased to 35% to show the suit */
+    object-fit: cover; object-position: center 35%; /* Fixed for Suit & Face */
     z-index: 2; border: 3px solid rgba(255,255,255,0.8);
     box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
 }
@@ -193,11 +197,24 @@ h1 { font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px;
 
 footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); }
 
-/* Responsive */
+/* ---------------- Responsive Styles ---------------- */
 @media (max-width: 900px) {
     .hero { flex-direction: column; text-align: center; gap: 40px; padding-top: 100px; }
     .hero-links { justify-content: center; }
-    .nav-links { display: none; } /* Add a hamburger menu later if needed */
+    
+    .hamburger { display: block; }
+    
+    .nav-links {
+        position: absolute; top: 70px; right: 10%;
+        background: rgba(11, 17, 33, 0.95); backdrop-filter: blur(15px);
+        border: 1px solid var(--border-color); border-radius: 12px;
+        flex-direction: column; gap: 20px; padding: 25px;
+        text-align: center; width: 220px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        display: none; /* Hidden by default */
+    }
+    .nav-links.active { display: flex; animation: slideDown 0.3s ease forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
     .contact-container { grid-template-columns: 1fr; padding: 30px; }
-    .hero-avatar, .hero-avatar img { width: 250px; height: 250px; object-position: center 40%; }
+    .hero-avatar, .hero-avatar img { width: 250px; height: 250px; object-position: center 35%; }
 }

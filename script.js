@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
     // 1. Smooth Fade-In on Scroll for all Glass Cards
     const cards = document.querySelectorAll('.glass');
     
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Active Navbar Highlight based on scroll
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
+    const navLinksList = document.querySelectorAll(".nav-links a");
 
     window.addEventListener("scroll", () => {
         let current = "";
@@ -31,31 +32,67 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        navLinks.forEach(link => {
+        navLinksList.forEach(link => {
             link.style.color = "var(--text-main)";
             if (link.getAttribute("href").includes(current)) {
                 link.style.color = "var(--neon-cyan)";
             }
         });
     });
-});
-// WhatsApp Integration
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // पेज को रीलोड होने से रोकेगा
 
-    // फॉर्म का डेटा उठाना
-    const name = document.getElementById('userName').value;
-    const email = document.getElementById('userEmail').value;
-    const message = document.getElementById('userMsg').value;
+    // 3. Mobile Hamburger Menu Logic
+    const hamburger = document.getElementById('hamburger');
+    const navLinksMenu = document.getElementById('nav-links');
 
-    // WhatsApp के लिए मैसेज को फॉर्मेट करना
-    const whatsappText = `Hello Jayesh,%0A%0AI saw your portfolio and want to connect.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+    if (hamburger && navLinksMenu) {
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('active');
+            
+            // Icon change (Bars to X)
+            const icon = hamburger.querySelector('i');
+            if (navLinksMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
 
-    // तेरा WhatsApp नंबर (Country code 91 के साथ, बिना + लगाए)
-    const phoneNumber = "918302763167"; 
+        // Close menu when a link is clicked
+        navLinksList.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinksMenu.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
 
-    // WhatsApp वेब/ऐप ओपन करने का लिंक
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappText}`;
-    
-    window.open(whatsappURL, '_blank');
+    // 4. WhatsApp Integration
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents page reload
+
+            // Get form data
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const message = document.getElementById('userMsg').value;
+
+            // Format message for WhatsApp
+            const whatsappText = `Hello Jayesh,%0A%0AI saw your portfolio and want to connect.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+
+            // Your WhatsApp Number (Country code 91)
+            const phoneNumber = "918302763167"; 
+
+            // WhatsApp URL
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappText}`;
+            
+            window.open(whatsappURL, '_blank');
+        });
+    }
+
 });

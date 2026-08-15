@@ -216,6 +216,22 @@ footer { text-align: center; padding: 30px; color: var(--text-muted); font-size:
     .nav-links.active { display: flex; animation: slideDown 0.3s ease forwards; }
     @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-    .contact-container { grid-template-columns: 1fr; padding: 30px; }
+    /* Contact Section Mobile Fixes */
+    .contact-container { 
+        grid-template-columns: 1fr; 
+        padding: 25px 15px; /* Reduced padding to fit the form perfectly inside the mobile screen */
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .c-value { 
+        word-break: break-word; /* Prevents long text like emails from overflowing outside the box */
+        font-size: 0.9rem;
+    }
+    
+    .contact-form, .input-group {
+        width: 100%;
+        max-width: 100%;
+    }
     .hero-avatar, .hero-avatar img { width: 250px; height: 250px; object-position: center 35%; }
 }

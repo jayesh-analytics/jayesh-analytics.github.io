@@ -150,8 +150,9 @@ h1 { font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px;
 .progress { background: rgba(129, 140, 248, 0.15); color: var(--neon-purple); border: 1px solid rgba(129,140,248,0.3); }
 .ongoing { background: rgba(56, 189, 248, 0.15); color: var(--neon-cyan); border: 1px solid rgba(56,189,248,0.3); }
 
+..card { display: flex; flex-direction: column; height: 100%; }
 .card h3 { margin-bottom: 10px; color: #fff; }
-.desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+.desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; }
 .tools { display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
 .tag { font-size: 0.75rem; color: var(--neon-cyan); font-weight: 600; }
 .card-link { color: #fff; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; font-weight: 600;}

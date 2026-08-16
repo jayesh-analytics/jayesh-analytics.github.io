@@ -65,7 +65,7 @@ section { padding: 80px 10%; }
 
 /* ---------------- Hero Section ---------------- */
 .hero { display: flex; justify-content: space-between; align-items: center; min-height: 100vh; padding-top: 120px; }
-.hero-content { max-width: 650px; }
+.hero-content { max-width: 800px; }
 
 .availability-badge { 
     display: inline-flex; align-items: center; gap: 10px; color: var(--neon-mint); 
@@ -79,7 +79,7 @@ section { padding: 80px 10%; }
 .hero-roles { color: var(--text-muted); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 15px; }
 .hero-roles span { color: var(--neon-cyan); margin: 0 8px; }
 
-h1 { font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1.1; margin-bottom: 20px; }
+h1 { font-size: clamp(2.8rem, 4vw, 3.8rem); line-height: 1.1; margin-bottom: 20px; white-space: nowrap; }
 .neon-text { 
     background: linear-gradient(90deg, var(--neon-mint), var(--neon-cyan)); 
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
@@ -202,7 +202,7 @@ footer { text-align: center; padding: 30px; color: var(--text-muted); font-size:
 @media (max-width: 900px) {
     .hero { flex-direction: column; text-align: center; gap: 40px; padding-top: 100px; }
     .hero-links { justify-content: center; }
-    
+    h1 { white-space: nowrap; font-size: clamp(1.5rem, 6vw, 2.2rem); }
     .hamburger { display: block; }
     
     .nav-links {

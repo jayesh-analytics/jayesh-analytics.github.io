@@ -3,7 +3,7 @@
 Welcome to the repository of my personal portfolio website! I am a Data Analyst and Business Analyst based in Sirohi, Rajasthan, focused on transforming raw data into meaningful business insights.
 
 ## 🔗 Live Website
-**Explore the portfolio here:** https://jayesh-analytics.github.io/jayesh-analytics-portfolio/
+**Explore the portfolio here:** [https://jayesh-analytics.github.io/](https://jayesh-analytics.github.io/)
 
 ## 🛠️ Tech Stack Used
 This modern, highly-animated portfolio is built from scratch without external heavy frameworks to ensure maximum performance and clean code.

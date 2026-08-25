@@ -38,6 +38,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.style.color = "var(--neon-cyan)";
             }
         });
+       // 3. iPhone Style Custom Smooth Scrolling (100% Working)
+    document.querySelectorAll('.nav-links a, .hero-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 90;
+                    const startPosition = window.scrollY;
+                    const distance = targetPosition - startPosition;
+                    let startTime = null;
+
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        
+                        const progress = Math.min(timeElapsed / 800, 1);
+                        const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+
+                        window.scrollTo(0, startPosition + (distance * ease));
+
+                        if (timeElapsed < 800) {
+                            requestAnimationFrame(animation);
+                        }
+                    }
+                    requestAnimationFrame(animation);
+                }
+            }
+        });
     });
 
     // 3. Mobile Hamburger Menu Logic

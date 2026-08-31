@@ -18,5 +18,4 @@ This modern, highly-animated portfolio is built from scratch without external he
 
 ## 📬 Connect with Me
 Want to collaborate on a data challenge? 
-* **LinkedIn:** [Jayesh Suthar](https://www.linkedin.com/in/jayesh-s-5566b9220/)
-* **Email:** Sutharjayesh607@gmail.com
+[LinkedIn](https://www.linkedin.com/in/jayesh-s-5566b9220/) · [Portfolio](https://jayesh-analytics.github.io/)

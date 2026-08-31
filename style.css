@@ -239,8 +239,7 @@ h1 { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.1; margin-bottom: 20px;
 .edu-details h3 { color: #fff; margin-bottom: 5px; font-size: 1.2rem; }
 .edu-details p { color: var(--text-muted); font-size: 0.9rem; }
 
-/* --- Perfect Certificate Cards (Reference Match) --- */
-
+/* --- Certification Section --- */
 .cert-card { 
     padding: 12px !important; 
     background: #0f172a !important; 
@@ -262,7 +261,7 @@ h1 { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.1; margin-bottom: 20px;
     margin-bottom: 0 !important;
 }
 
-/* Text ko Left align kiya */
+
 .cert-info {
     padding: 0 !important;
     text-align: left !important; 
@@ -271,7 +270,7 @@ h1 { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.1; margin-bottom: 20px;
     flex-grow: 1;
 }
 
-/* Certificate ka main naam (Single line mein) */
+
 .cert-info h4 {
     font-size: 0.85rem !important;
     font-weight: 700 !important;
@@ -282,7 +281,6 @@ h1 { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.1; margin-bottom: 20px;
     text-overflow: ellipsis !important; 
 }
 
-/* Certificate dene wale ka naam (Jaise: Coding Ninjas) */
 .cert-info > span:not(.view-cert) {
     font-size: 0.75rem !important;
     color: #34d399 !important; 

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.style.color = "var(--neon-cyan)";
             }
         });
-       // 3. iPhone Style Custom Smooth Scrolling (100% Working)
+       // 3. Smooth Scrolling
     document.querySelectorAll('.nav-links a, .hero-links a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             if (this.getAttribute('href').startsWith('#')) {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Format message for WhatsApp
             const whatsappText = `Hello Jayesh,%0A%0AI saw your portfolio and want to connect.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
 
-            // Your WhatsApp Number (Country code 91)
+            // WhatsApp Number (Country code 91)
             const phoneNumber = "918302763167"; 
 
             // WhatsApp URL
